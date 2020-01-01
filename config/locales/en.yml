@@ -30,4 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  products:
+    index:
+      title: "Browse Products"
+      description: "Welcome to our store. Take out your phone and buy something."
+  activerecord:
+    attributes:
+      product:
+        price: "Price"
+        category: "Category"
+  number:
+    currency:
+      format:
+        unit: ""
