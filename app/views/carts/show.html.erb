@@ -29,5 +29,5 @@
     <%= link_to "Continue Shopping", session[:last_product_page] %> |
   <% end %>
    <%= link_to "Edit", edit_cart_path(@cart) %>
-  <%= link_to "Checkout" %>
+  <%= link_to "Checkout", @cart.paypal_url(products_path) %>
 </p>
