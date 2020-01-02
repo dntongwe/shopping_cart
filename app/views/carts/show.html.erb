@@ -24,10 +24,14 @@
   </tr>
 </table>
 
+
+
 <p>
-  <% if session[:last_product_page] %>
-    <%= link_to "Continue Shopping", session[:last_product_page] %> |
-  <% end %>
-   <%= link_to "Edit", edit_cart_path(@cart) %>
-  <%= link_to "Checkout", @cart.paypal_url(products_path, payment_notifications_url) %>
+   <%= link_to "Continue Shopping", products_path %>
 </p>
+
+<%= form_tag APP_CONFIG[:paypal_url] do %>
+  <%= hidden_field_tag :cmd, "_s-xclick" %>
+  <%= hidden_field_tag :encrypted, @cart.paypal_encrypted(products_url, payment_notifications_url(:secret => APP_CONFIG[:paypal_secret])) %>
+  <%= submit_tag "Checkout" %>
+<% end %>

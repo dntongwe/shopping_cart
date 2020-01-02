@@ -1,0 +1,20 @@
+
+
+development:
+  paypal_email: sb-n9vvk38491@business.example.com
+  paypal_secret: foobar
+  paypal_cert_id: E5FAYYTHZYYGA
+  paypal_url: https://www.sandbox.paypal.com/cgi-bin/webscr
+
+test:
+  paypal_email: test@example.com
+  paypal_secret: testsecret
+  paypal_cert_id: 123456789
+  paypal_url: testpaypalurl
+
+production:
+  paypal_email: foo@example.com
+  paypal_secret: supersecret
+  paypal_cert_id: E5FAYYTHZYYGA
+  paypal_url: "https://www.paypal.com/cgi-bin/webscr"
+
