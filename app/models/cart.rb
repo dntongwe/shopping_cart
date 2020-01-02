@@ -8,13 +8,14 @@ class Cart < ApplicationRecord
 
 
 
-def paypal_url(return_url)
+def paypal_url(return_url, notify_url)
   values = {
     :business => 'sb-n9vvk38491@business.example.com',
     :cmd => '_cart',
     :upload => 1,
     :return => return_url,
-    :invoice => id
+    :invoice => id,
+    :notify_url => notify_url
   }
   cart_items.each_with_index do |item, index|
     values.merge!({
